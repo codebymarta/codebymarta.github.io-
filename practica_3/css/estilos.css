@@ -8,35 +8,40 @@ body {
 
 h1 {
 border-bottom:5px;
-border-color: black;}
+border-color: black;
+footer { border-top: 5px solid black; 
+}
 
-@media all and (max-width: 500px) {
 
-img { background-image: url(images/fondoParrafo.png);
-    float: right
-    margin-right: 60px
-    border: solid red;
-    width: 90px;
-    display: block;
-     margin-left: auto;
-     margin-right: auto;}
 
+img-right{ background-image: url(images/fondoParrafo.png);
+   float:right;
+    margin-right: 60px;
+      border: 3px solid red;
+    width: 90% px;
+    
 
 p {border-radius: 30px 30px 0 0;
-    box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.5); 
-    border-top: 5px solid black;}
+    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.5); 
+    border-top: 5px solid black;
+border-radius: 30px 30px 0 0}
 
 
-li{border-left: 5px solid red;}
+li{border-left: 5px solid red;
+    padding-left: 10px;
 
 
 p {last-of-type
-     border-radius 30px }
+     border-radius 30px;}
 
-     text text-indent: 40px;
+     text-indent: 40px;
      
-p { padding 10px}
+p { padding:10px;}
 
  p{ first-of-type
-    background-repeat: repeat;
+    background-repeat:repeat;
+
  }
+parrafo-caja:first-child {
+    background-image:images/fondoParrafo.png
+    background-repeat: ; }
