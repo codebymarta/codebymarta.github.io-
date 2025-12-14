@@ -1,0 +1,132 @@
+/*
+    CSS para el examen
+
+    colores:
+
+    fondo: #333333;
+    fondo: cajas: #424242;
+    linea: lightgray;
+    boton: #007BFF;
+    boton seleccionado: #0056b3;
+*/
+
+body {
+     background-color:#333333;
+     }
+   
+
+.container {
+    text-align: center;
+     width: 90vw;
+     margin:0% auto;
+
+}
+    
+
+.youtuber, .footer, .header {
+    background-color:#424242;
+    border: 1px solid lightgray;
+   border-radius: 8px; 
+   width: 90vw;
+    margin: 10px auto;
+    padding: 10px;
+    text-align: center; 
+    box-sizing: border-box;
+
+}
+
+.youtuber {
+    width: 100%; 
+    margin: 0 auto; 
+}
+    
+.footer {
+    padding: 10px;
+    color: white;
+    width: 90vw;
+    margin: 10px auto;
+   
+    
+}
+
+.imageHome{
+     margin: 0 auto;
+     border:black 4px solid;
+    border-radius:3%;
+     width: 60vw;
+     object-fit: cover; 
+     display: block;
+}
+
+
+.youtuber .images {
+
+    border-radius: 90vw;
+    width: 150px;
+    height: 150px;    
+    object-fit: cover; 
+}
+
+.youtuber h2 {    
+    color: white;
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+.youtuber p {
+    color: white;
+    font-size: 1em;
+}
+
+#menu {
+    list-style: none;
+}
+
+li {
+     display: inline;
+     border-left: 4px red solid;
+     padding-left: 10px;
+     
+}
+
+#menu a {
+    color: white;
+    text-decoration: none;
+}
+
+#menu a:hover {
+      color: red;
+}
+
+
+.button {
+    padding: 10px 20px;
+    color: white;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    /* animacion en css, para cambiar el color del boton, no visto en clase 
+    pero yo te lo regalo ;) */
+    transition: background-color 0.3s ease;
+}
+.button:hover {
+    border-color:#FF00FF;
+     background-color: #FF00FF;
+}
+
+@media all and (max-width: 700px) {
+    .youtuber, .footer , .header {
+       border-color:red;
+       box-shadow: 0 0 5px red;
+    }
+    .button {
+            
+     background-color:red; 
+    }
+
+    .button:hover {
+        background-color:darkred;
+    }    
+}
