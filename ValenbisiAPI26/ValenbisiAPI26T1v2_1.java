@@ -14,14 +14,8 @@ import java.io.IOException;
 
 public class ValenbisiAPI26T1v2_1 {
 
-	
-	// https://geoportal.valencia.es/server/rest/services/OPENDATA/Trafico/MapServer/228/query?where=1=1&outFields=*&f=json
-    private static final String API_URL =
-            "https://geoportal.valencia.es/server/rest/services/OPENDATA/Trafico/MapServer/228/query"
-            + "?where=1%3D1"
-            + "&outFields=*"
-            + "&returnGeometry=true"
-            + "&f=json";
+private static final String API_URL =
+"https://geoportal.valencia.es/server/rest/services/OPENDATA/Trafico/MapServer/228/query?where=1=1&outFields=*&f=json";
 
     public static void main(String[] args) {
 
@@ -46,45 +40,26 @@ public class ValenbisiAPI26T1v2_1 {
                 System.out.println();
 
                 // BUCLE RECORRE VECTOR FEATURES MOSTRANDO LOS DATOS SOLICITADOS.
-                for (int i = 0; i < features.length(); i++) {
-                    JSONObject station = features.getJSONObject(i);
-                    // Los datos de cada estación están dentro del objeto "attributes"
-                    JSONObject attributes = station.getJSONObject("attributes");
+                
+                  for (int i = 0; i < features.length(); i++) {
                     
-                     for (int i = 0; i < features.length(); i++) {
-                    JSONObject station = features.getJSONObject(i);
-                    JSONObject attributes = station.getJSONObject("attributes");
+                   JSONObject station = features.getJSONObject(i);
                     
-                    // Nombres de campos correctos para la API de Valencia
-                    String nombre = attributes.optString("address", "Nombre no disponible"); 
-                    int bicisLibres = attributes.optInt("available", 0);
-                    int huecosLibres = attributes.optInt("free", 0);
-
-                    System.out.println("ESTACIÓN: " + nombre);
-                    System.out.println("  - Bicicletas disponibles: " + bicisLibres);
-                    System.out.println("  - Bornetas vacías: " + huecosLibres);
+                    JSONObject attrs = station.getJSONObject("attributes");
+                    String nombre = attrs.optString("address", "N/A");
+                    int bicis = attrs.optInt("available", 0);
+                    int huecos = attrs.optInt("free", 0);
+                    int total = attrs.optInt("total", 0);
+                    
+                     System.out.println("ESTACIÓN: " + nombre);
+                    System.out.println("  - Bicicletas disponibles: " + bicis);
+                    System.out.println("  - Bornetas vacías: " + huecos);
+                    System.out.println("  - Capacidad total: " + total);
                     System.out.println("--------------------------------------------------");
-                }
-                
-
-                    System.out.println("ESTACIÓN: " + nombre);
-                    System.out.println("  - Bicicletas disponibles: " + bicisLibres);
-                    System.out.println("  - Bornetas vacías: " + huecosLibres);
-                    System.out.println("  - Capacidad total: " + totalPuestos);
-                    System.out.println("--------------------------------------------------");
-                }
-                
-                
-                              
-                
-                
-                
-                
-                
-                
+                    }
             }
-
-        } catch (IOException e) {
+                
+            } catch (IOException e) {
             System.out.println("Error en la petición HTTP:");
             e.printStackTrace();
         } catch (Exception e) {
@@ -93,5 +68,3 @@ public class ValenbisiAPI26T1v2_1 {
         }
     }
 }
-
-
